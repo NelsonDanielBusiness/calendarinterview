@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "a07f67bc-dcc5-4bda-aabe-5862af38f102",
+		"name": "interview calendar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17175915"
+	},
+	"item": [
+		{
+			"name": "create candidate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Nelson\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/candidates",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"candidates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get candidates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/candidates",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"candidates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get interviewers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/interviewers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"interviewers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "arrange interview",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/interview/arrange?candidateId=1&interviewId=1&interviewId=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"interview",
+						"arrange"
+					],
+					"query": [
+						{
+							"key": "candidateId",
+							"value": "1"
+						},
+						{
+							"key": "interviewId",
+							"value": "1"
+						},
+						{
+							"key": "interviewId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Availability",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userAuthority\" : \"INTERVIEWER\",\r\n    \"userId\" : \"1\", \r\n    \"interviewAvailabilities\" : [\r\n        {\r\n            \"day\" : \"2023-05-14\",\r\n            \"initialDate\" : \"09:00 am\",\r\n            \"endDate\" : \"12:00 pm\"\r\n        },\r\n        {\r\n            \"day\" : \"2024-05-16\",\r\n            \"initialDate\" : \"07:00 pm\",\r\n            \"endDate\" : \"09:00 pm\"\r\n        }\r\n    ]   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/interview-availabilities/batch",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"interview-availabilities",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create interviewers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Joao\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/interviewers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"interviewers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

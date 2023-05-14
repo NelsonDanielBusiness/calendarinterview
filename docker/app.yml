@@ -1,0 +1,13 @@
+version: '2'
+services:
+  interviewcalendar-app:
+    image: interviewcalendar
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_DATASOURCE_URL=jdbc:mysql://interviewcalendar-mysql:3306/interviewcalendar?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    ports:
+      - 8080:8080
+  interviewcalendar-mysql:
+    extends:
+      file: mysql.yml
+      service: interviewcalendar-mysql
